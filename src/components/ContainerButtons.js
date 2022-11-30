@@ -1,35 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import wrong from "../assets/img/icone_erro.png";
-import correct from "../assets/img/icone_certo.png";
-import interrogation from "../assets/img/icone_quase.png";
 
-function ContainerButtons({
-  setPerguntaCor,
-  setForget,
-  setAlmostForget,
-  setRemember,
-  setIcon,
-  index,
-}) {
-  function forgetButton() {
-    setForget(true);
-    setPerguntaCor("#ff3030");
-    setIcon(wrong);
-  }
-
-  function almostButton() {
-    setAlmostForget(true);
-    setPerguntaCor("#ff922e");
-    setIcon(interrogation);
-  }
-
-  function zap() {
-    setRemember(true);
-    setPerguntaCor("#2fbe34");
-    setIcon(correct);
-  }
-
+function ContainerButtons({ forgetButton, almostButton, zap }) {
   return (
     <ContainerButtonsStyled>
       <OptionButtonRedStyled onClick={forgetButton}>

@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function FooterContainer({ usedIndexes, cards }) {
-  const lengthListIndexes = usedIndexes.length;
+function FooterContainer({ cards, count }) {
   const lengthFlashcards = cards.length;
-
-  if (lengthListIndexes <= 8) {
+  console.log(count);
+  if (count <= 8) {
     return (
       <FooterStyle>
-        {lengthListIndexes}/{lengthFlashcards}
+        {count}/{lengthFlashcards} CONCLUÍDOS
       </FooterStyle>
     );
   } else {

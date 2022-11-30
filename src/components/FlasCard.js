@@ -3,7 +3,7 @@ import PerguntaAberta from "./PerguntaAberta";
 import PerguntaFechada from "./PerguntaFechada";
 import arrow from "../assets/img/seta_play.png";
 
-function FlasCard({ clickCard, cardCliked, card, index }) {
+function FlasCard({ clickCard, cardCliked, card, index, count, setCount }) {
   const [perguntaCor, setPerguntaCor] = useState("#333333");
   const [icon, setIcon] = useState(arrow);
 
@@ -14,6 +14,8 @@ function FlasCard({ clickCard, cardCliked, card, index }) {
         card={card}
         index={index}
         setIcon={setIcon}
+        count={count}
+        setCount={setCount}
       />
     );
   } else {

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import FlasCard from "./FlasCard";
 
-function Questions({ cards, clickCard, cardCliked, setCardCliked }) {
+function Questions({
+  cards,
+  clickCard,
+  cardCliked,
+  setCardCliked,
+  count,
+  setCount,
+}) {
   return (
     <>
       {cards.map((card, index) => {
@@ -12,6 +19,8 @@ function Questions({ cards, clickCard, cardCliked, setCardCliked }) {
             setCardCliked={setCardCliked}
             card={card}
             index={index}
+            count={count}
+            setCount={setCount}
           />
         );
       })}

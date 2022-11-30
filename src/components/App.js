@@ -7,12 +7,11 @@ import cards from "../cards";
 
 function App() {
   const [cardCliked, setCardCliked] = useState(null);
-  const [usedIndexes, setUsedIndexes] = useState([]);
+  const [count, setCount] = useState(0);
 
   function clickCard(index) {
     // const listIndexes = [...usedIndexes, index];
     // setUsedIndexes(listIndexes);
-    setUsedIndexes([...usedIndexes, index]);
     setCardCliked(index);
   }
 
@@ -27,8 +26,10 @@ function App() {
         cardCliked={cardCliked}
         setCardCliked={setCardCliked}
         cards={cards}
+        count={count}
+        setCount={setCount}
       />
-      <FooterContainer usedIndexes={usedIndexes} cards={cards} />
+      <FooterContainer count={count} cards={cards} />
     </ScreenContainerStyle>
   );
 }
