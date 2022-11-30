@@ -6,7 +6,7 @@ import turnAround from "../assets/img/seta_virar.png";
 // import interrogation from "../assets/img/icone_quase.png";
 import ContainerButtons from "./ContainerButtons";
 
-function PerguntaAberta({ card, index, setPerguntaCor }) {
+function PerguntaAberta({ card, index, setPerguntaCor, setIcon }) {
   const [goToAnswer, setGoToAnswer] = useState(false);
   const [forget, setForget] = useState(false);
   const [remember, setRemember] = useState(false);
@@ -48,6 +48,7 @@ function PerguntaAberta({ card, index, setPerguntaCor }) {
           index={index}
           forget={forget}
           setPerguntaCor={setPerguntaCor}
+          setIcon={setIcon}
         />
       )}
     </PerguntaAbertaStyled>

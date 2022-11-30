@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import arrow from "../assets/img/seta_play.png";
 
-function PerguntaFechada({ perguntaCor, clickCard, index }) {
+function PerguntaFechada({ perguntaCor, clickCard, index, icon }) {
   return (
     <PerguntaFechadaStyled
       perguntaStyle={perguntaCor}
       onClick={() => clickCard(index)}
     >
       <p>Pergunta {index + 1}</p>
-      <img alt="" src={arrow} />
+      <img alt="" src={icon} />
       {/* <img alt="" src={wrong} /> */}
       {/* <img alt="" src={correct} /> */}
     </PerguntaFechadaStyled>

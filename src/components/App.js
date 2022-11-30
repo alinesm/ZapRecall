@@ -10,8 +10,9 @@ function App() {
   const [usedIndexes, setUsedIndexes] = useState([]);
 
   function clickCard(index) {
-    const listIndexes = [...usedIndexes, index];
-    setUsedIndexes(listIndexes);
+    // const listIndexes = [...usedIndexes, index];
+    // setUsedIndexes(listIndexes);
+    setUsedIndexes([...usedIndexes, index]);
     setCardCliked(index);
   }
 
