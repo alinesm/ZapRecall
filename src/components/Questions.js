@@ -1,16 +1,7 @@
 import React, { useState } from "react";
-import cards from "../cards";
 import FlasCard from "./FlasCard";
 
-function Questions() {
-  const [cardCliked, setCardCliked] = useState(null);
-
-  function clickCard(index) {
-    console.log(index);
-    setCardCliked(index);
-  }
-  // console.log(cards);
-
+function Questions({ cards, clickCard, cardCliked, setCardCliked }) {
   return (
     <>
       {cards.map((card, index) => {

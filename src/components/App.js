@@ -1,23 +1,40 @@
+import { useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/img/logo.png";
+import FooterContainer from "./FooterContainer";
 import Questions from "./Questions";
+import cards from "../cards";
 
 function App() {
+  const [cardCliked, setCardCliked] = useState(null);
+  const [usedIndexes, setUsedIndexes] = useState([]);
+
+  function clickCard(index) {
+    const listIndexes = [...usedIndexes, index];
+    setUsedIndexes(listIndexes);
+    setCardCliked(index);
+  }
+
   return (
-    <ScreenContainer>
-      <LogoContainer>
+    <ScreenContainerStyle>
+      <LogoContainerStyle>
         <img src={logo} alt="" />
         <h1>ZapRecall</h1>
-      </LogoContainer>
-      <Questions />
-      <Footer />
-    </ScreenContainer>
+      </LogoContainerStyle>
+      <Questions
+        clickCard={clickCard}
+        cardCliked={cardCliked}
+        setCardCliked={setCardCliked}
+        cards={cards}
+      />
+      <FooterContainer usedIndexes={usedIndexes} cards={cards} />
+    </ScreenContainerStyle>
   );
 }
 
 export default App;
 
-const ScreenContainer = styled.div`
+const ScreenContainerStyle = styled.div`
   background-color: #fb6b6b;
   width: 100vw;
   min-height: 100vh;
@@ -29,7 +46,7 @@ const ScreenContainer = styled.div`
   padding-bottom: 200px;
 `;
 
-const LogoContainer = styled.div`
+const LogoContainerStyle = styled.div`
   display: flex;
   align-items: center;
   margin: 40px 0 20px 0;
@@ -46,27 +63,3 @@ const LogoContainer = styled.div`
     margin-left: 20px;
   }
 `;
-
-const Footer = styled.div`
-  width: 100%;
-  min-height: 50px;
-  background-color: #ffffff;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Recursive";
-  font-weight: 400;
-  font-size: 18px;
-  color: #333333;
-  padding: 10px;
-`;
-
-// .footer-concluidos > .container-botoes {
-//   display: flex;
-//   width: 80%;
-//   justify-content: space-between;
-//   margin: 20px;
-// }

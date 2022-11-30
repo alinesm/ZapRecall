@@ -1,18 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-function ContainerButtons({ setForget, setAlmostForget, setRemember }) {
+function ContainerButtons({
+  setPerguntaCor,
+  setForget,
+  setAlmostForget,
+  setRemember,
+  index,
+}) {
+  function forgetButton() {
+    setForget(true);
+    setPerguntaCor("#ff3030");
+  }
+
+  function almostButton() {
+    setAlmostForget(true);
+    setPerguntaCor("#ff922e");
+  }
+
+  function zap() {
+    setRemember(true);
+    setPerguntaCor("#2fbe34");
+  }
+
   return (
     <ContainerButtonsStyled>
-      <OptionButtonRedStyled onClick={() => setForget(true)}>
+      <OptionButtonRedStyled onClick={forgetButton}>
         Não lembrei
       </OptionButtonRedStyled>
-      <OptionButtonOrangeStyled onClick={() => setAlmostForget(true)}>
+      <OptionButtonOrangeStyled onClick={almostButton}>
         quase não lembrei
       </OptionButtonOrangeStyled>
-      <OptionButtonGreenStyled onClick={() => setRemember(true)}>
-        Zap
-      </OptionButtonGreenStyled>
+      <OptionButtonGreenStyled onClick={zap}>Zap</OptionButtonGreenStyled>
     </ContainerButtonsStyled>
   );
 }

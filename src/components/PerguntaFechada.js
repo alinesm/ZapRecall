@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import arrow from "../assets/img/seta_play.png";
 
-function PerguntaFechada({ clickCard, index }) {
-  // const [perguntaStyle, setPerguntaStyle] = useState("");
-
+function PerguntaFechada({ perguntaCor, clickCard, index }) {
   return (
-    <PerguntaFechadaStyled onClick={() => clickCard(index)}>
+    <PerguntaFechadaStyled
+      perguntaStyle={perguntaCor}
+      onClick={() => clickCard(index)}
+    >
       <p>Pergunta {index + 1}</p>
       <img alt="" src={arrow} />
       {/* <img alt="" src={wrong} /> */}
@@ -34,7 +35,7 @@ const PerguntaFechadaStyled = styled.div`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    /* color: ${(props) => props.perguntaStyle}; */
+    color: ${(props) => props.perguntaStyle};
     /* color: ${(props) => {
       if (props.perguntaStyle === "red") {
         return "#ff922e";
@@ -46,11 +47,11 @@ const PerguntaFechadaStyled = styled.div`
         return "#333333";
       }
     }}; */
-    color: #333333;
+    /* color: #333333; */
     /* color: #ff922e; */
     /* color: #2FBE34; */
     /* color: #ff3030; */
     text-decoration: ${(props) =>
-      props.perguntaStyle === "#333333" ? "line-through" : "none"};
+      props.perguntaStyle !== "#333333" ? "line-through" : "none"};
   }
 `;
