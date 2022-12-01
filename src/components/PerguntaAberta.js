@@ -6,7 +6,7 @@ import wrong from "../assets/img/icone_erro.png";
 import correct from "../assets/img/icone_certo.png";
 import interrogation from "../assets/img/icone_quase.png";
 
-function PerguntaAberta({
+export default function PerguntaAberta({
   card,
   index,
   setPerguntaCor,
@@ -62,8 +62,6 @@ function PerguntaAberta({
     </PerguntaAbertaStyled>
   );
 }
-
-export default PerguntaAberta;
 
 const PerguntaAbertaStyled = styled.div`
   width: 300px;

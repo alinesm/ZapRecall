@@ -3,7 +3,7 @@ import PerguntaAberta from "./PerguntaAberta";
 import PerguntaFechada from "./PerguntaFechada";
 import arrow from "../assets/img/seta_play.png";
 
-function FlasCard({
+export default function FlasCard({
   clickCard,
   setCardCliked,
   cardCliked,
@@ -41,5 +41,3 @@ function FlasCard({
     );
   }
 }
-
-export default FlasCard;

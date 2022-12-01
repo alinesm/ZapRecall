@@ -1,81 +1,46 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 
-function ContainerButtons({ forgetButton, almostButton, zap }) {
+export default function ContainerButtons({ forgetButton, almostButton, zap }) {
   return (
     <ContainerButtonsStyled>
-      <OptionButtonRedStyled onClick={forgetButton}>
-        Não lembrei
-      </OptionButtonRedStyled>
-      <OptionButtonOrangeStyled onClick={almostButton}>
-        quase não lembrei
-      </OptionButtonOrangeStyled>
-      <OptionButtonGreenStyled onClick={zap}>Zap</OptionButtonGreenStyled>
+      <button onClick={forgetButton}>Não lembrei</button>
+      <button onClick={almostButton}>quase não lembrei</button>
+      <button onClick={zap}>Zap</button>
     </ContainerButtonsStyled>
   );
 }
-
-export default ContainerButtons;
 
 const ContainerButtonsStyled = styled.div`
   display: flex;
   width: 80%;
   justify-content: space-between;
   margin: 20px;
-`;
-
-const OptionButtonRedStyled = styled.button`
-  width: 90px;
-  font-family: "Recursive";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff;
-  background: red;
-  border-radius: 5px;
-  border: 1px solid red;
-  padding: 5px;
-  margin-right: 7px;
-`;
-
-const OptionButtonOrangeStyled = styled.button`
-  width: 90px;
-  font-family: "Recursive";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff;
-  background: #ff922e;
-  border-radius: 5px;
-  border: 1px solid #ff922e;
-  padding: 5px;
-  margin-right: 7px;
-`;
-
-const OptionButtonGreenStyled = styled.button`
-  width: 90px;
-  font-family: "Recursive";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff;
-  background: #2fbe34;
-  border-radius: 5px;
-  border: 1px solid #2fbe34;
-  padding: 5px;
+  button {
+    width: 90px;
+    font-family: "Recursive";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 7px;
+    &:nth-child(1) {
+      background: red;
+      border: 1px solid red;
+    }
+    &:nth-child(2) {
+      background: #ff922e;
+      border: 1px solid #ff922e;
+    }
+    &:nth-child(3) {
+      background: #2fbe34;
+      border: 1px solid #2fbe34;
+    }
+  }
 `;

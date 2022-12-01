@@ -5,7 +5,7 @@ import FooterContainer from "./FooterContainer";
 import Questions from "./Questions";
 import cards from "../cards";
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0);
 
   return (
@@ -19,8 +19,6 @@ function App() {
     </ScreenContainerStyle>
   );
 }
-
-export default App;
 
 const ScreenContainerStyle = styled.div`
   background-color: #fb6b6b;

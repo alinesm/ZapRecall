@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-function PerguntaFechada({ perguntaCor, clickCard, index, icon, goToChecked }) {
+export default function PerguntaFechada({
+  perguntaCor,
+  clickCard,
+  index,
+  icon,
+}) {
   return (
     <PerguntaFechadaStyled
       perguntaStyle={perguntaCor}
@@ -11,8 +16,6 @@ function PerguntaFechada({ perguntaCor, clickCard, index, icon, goToChecked }) {
     </PerguntaFechadaStyled>
   );
 }
-
-export default PerguntaFechada;
 
 const PerguntaFechadaStyled = styled.div`
   width: 300px;
@@ -28,7 +31,7 @@ const PerguntaFechadaStyled = styled.div`
   p {
     font-family: "Recursive";
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 16px;
     line-height: 19px;
     color: ${(props) => props.perguntaStyle};

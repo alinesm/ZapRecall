@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FlasCard from "./FlasCard";
 
-function Questions({ cards, count, setCount }) {
+export default function Questions({ cards, count, setCount }) {
   const [cardCliked, setCardCliked] = useState(null);
 
   function clickCard(index) {
@@ -25,5 +25,3 @@ function Questions({ cards, count, setCount }) {
     </>
   );
 }
-
-export default Questions;
