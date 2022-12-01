@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import FlasCard from "./FlasCard";
 
-function Questions({
-  cards,
-  clickCard,
-  cardCliked,
-  setCardCliked,
-  count,
-  setCount,
-}) {
+function Questions({ cards, count, setCount }) {
+  const [cardCliked, setCardCliked] = useState(null);
+
+  function clickCard(index) {
+    setCardCliked(index);
+  }
   return (
     <>
       {cards.map((card, index) => {

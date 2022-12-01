@@ -3,9 +3,18 @@ import PerguntaAberta from "./PerguntaAberta";
 import PerguntaFechada from "./PerguntaFechada";
 import arrow from "../assets/img/seta_play.png";
 
-function FlasCard({ clickCard, cardCliked, card, index, count, setCount }) {
+function FlasCard({
+  clickCard,
+  setCardCliked,
+  cardCliked,
+  card,
+  index,
+  count,
+  setCount,
+}) {
   const [perguntaCor, setPerguntaCor] = useState("#333333");
   const [icon, setIcon] = useState(arrow);
+  const [goToChecked, setGoToChecked] = useState(false);
 
   if (cardCliked === index) {
     return (
@@ -16,6 +25,8 @@ function FlasCard({ clickCard, cardCliked, card, index, count, setCount }) {
         setIcon={setIcon}
         count={count}
         setCount={setCount}
+        setGoToChecked={setGoToChecked}
+        setCardCliked={setCardCliked}
       />
     );
   } else {
@@ -25,6 +36,7 @@ function FlasCard({ clickCard, cardCliked, card, index, count, setCount }) {
         clickCard={clickCard}
         index={index}
         icon={icon}
+        goToChecked={goToChecked}
       />
     );
   }

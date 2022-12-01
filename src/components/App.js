@@ -6,14 +6,7 @@ import Questions from "./Questions";
 import cards from "../cards";
 
 function App() {
-  const [cardCliked, setCardCliked] = useState(null);
   const [count, setCount] = useState(0);
-
-  function clickCard(index) {
-    // const listIndexes = [...usedIndexes, index];
-    // setUsedIndexes(listIndexes);
-    setCardCliked(index);
-  }
 
   return (
     <ScreenContainerStyle>
@@ -21,14 +14,7 @@ function App() {
         <img src={logo} alt="" />
         <h1>ZapRecall</h1>
       </LogoContainerStyle>
-      <Questions
-        clickCard={clickCard}
-        cardCliked={cardCliked}
-        setCardCliked={setCardCliked}
-        cards={cards}
-        count={count}
-        setCount={setCount}
-      />
+      <Questions cards={cards} count={count} setCount={setCount} />
       <FooterContainer count={count} cards={cards} />
     </ScreenContainerStyle>
   );

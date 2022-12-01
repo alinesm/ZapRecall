@@ -13,18 +13,19 @@ function PerguntaAberta({
   setIcon,
   setCount,
   count,
+  setCardCliked,
 }) {
   const [goToAnswer, setGoToAnswer] = useState(false);
   const [forget, setForget] = useState(false);
   const [remember, setRemember] = useState(false);
   const [almostForget, setAlmostForget] = useState(false);
-  console.log(count);
 
   function forgetButton() {
     setForget(true);
     setPerguntaCor("#ff3030");
     setIcon(wrong);
     setCount(count + 1);
+    setCardCliked(null);
   }
 
   function almostButton() {
@@ -32,6 +33,7 @@ function PerguntaAberta({
     setPerguntaCor("#ff922e");
     setIcon(interrogation);
     setCount(count + 1);
+    setCardCliked(null);
   }
 
   function zap() {
@@ -39,6 +41,7 @@ function PerguntaAberta({
     setPerguntaCor("#2fbe34");
     setIcon(correct);
     setCount(count + 1);
+    setCardCliked(null);
   }
 
   return (
