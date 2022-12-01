@@ -3,9 +3,15 @@ import styled from "styled-components";
 export default function ContainerButtons({ forgetButton, almostButton, zap }) {
   return (
     <ContainerButtonsStyled>
-      <button onClick={forgetButton}>Não lembrei</button>
-      <button onClick={almostButton}>quase não lembrei</button>
-      <button onClick={zap}>Zap</button>
+      <button onClick={forgetButton} data-test="no-btn">
+        Não lembrei
+      </button>
+      <button onClick={almostButton} data-test="partial-btn">
+        quase não lembrei
+      </button>
+      <button onClick={zap} data-test="zap-btn">
+        Zap
+      </button>
     </ContainerButtonsStyled>
   );
 }
@@ -16,6 +22,7 @@ const ContainerButtonsStyled = styled.div`
   justify-content: space-between;
   margin: 20px;
   button {
+    cursor: pointer;
     width: 90px;
     font-family: "Recursive";
     font-style: normal;

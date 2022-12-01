@@ -31,6 +31,9 @@ export default function PerguntaFechada({
 }
 
 const PerguntaFechadaStyled = styled.div`
+  cursor: ${(props) => props.perguntaStyle === "#333333" && "pointer"};
+  pointer-events: ${(props) =>
+    props.perguntaStyle === "#333333" ? "all" : "none"};
   width: 300px;
   height: 35px;
   background-color: #ffffff;

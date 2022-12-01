@@ -45,10 +45,17 @@ export default function PerguntaAberta({
   }
 
   return (
-    <PerguntaAbertaStyled key={index}>
-      <p>{!goToAnswer ? card.question : card.answer}</p>
+    <PerguntaAbertaStyled key={index} data-test="flashcard">
+      <p data-test="flashcard-text">
+        {!goToAnswer ? card.question : card.answer}
+      </p>
       {!goToAnswer ? (
-        <img onClick={() => setGoToAnswer(true)} alt="" src={turnAround} />
+        <img
+          onClick={() => setGoToAnswer(true)}
+          alt=""
+          src={turnAround}
+          data-test="turn-btn"
+        />
       ) : (
         <ContainerButtons
           forgetButton={forgetButton}
@@ -68,7 +75,7 @@ const PerguntaAbertaStyled = styled.div`
   margin: 12px;
   padding: 15px;
   min-height: 100px;
-  background-color: yellow;
+  background-color: #ffffd5;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   font-family: "Recursive";
@@ -85,5 +92,6 @@ const PerguntaAbertaStyled = styled.div`
     position: absolute;
     bottom: 10px;
     right: 10px;
+    cursor: pointer;
   }
 `;
