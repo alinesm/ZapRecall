@@ -8,11 +8,24 @@ export default function PerguntaFechada({
 }) {
   return (
     <PerguntaFechadaStyled
+      data-test="flashcard"
       perguntaStyle={perguntaCor}
       onClick={() => clickCard(index)}
     >
-      <p>Pergunta {index + 1}</p>
-      <img alt="" src={icon} />
+      <p data-test="flashcard-text">Pergunta {index + 1}</p>
+      <img
+        alt=""
+        src={icon}
+        data-test={
+          icon === "arrow"
+            ? "play-btn"
+            : icon === "wrong"
+            ? "no-icon"
+            : icon === "corret"
+            ? "zap-icon"
+            : "partial-icon"
+        }
+      />
     </PerguntaFechadaStyled>
   );
 }

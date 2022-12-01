@@ -6,7 +6,7 @@ function FooterContainer({ cards, count }) {
   console.log(count);
   if (count <= 8) {
     return (
-      <FooterStyle>
+      <FooterStyle data-test="footer">
         {count}/{lengthFlashcards} CONCLUÍDOS
       </FooterStyle>
     );
