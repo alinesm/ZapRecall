@@ -13,19 +13,7 @@ export default function PerguntaFechada({
       onClick={() => clickCard(index)}
     >
       <p data-test="flashcard-text">Pergunta {index + 1}</p>
-      <img
-        alt=""
-        src={icon}
-        data-test={
-          icon === "arrow"
-            ? "play-btn"
-            : icon === "wrong"
-            ? "no-icon"
-            : icon === "corret"
-            ? "zap-icon"
-            : "partial-icon"
-        }
-      />
+      <img alt="" src={icon} data-test="play-btn" />
     </PerguntaFechadaStyled>
   );
 }
