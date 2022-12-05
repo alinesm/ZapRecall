@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
-export default function ContainerButtons({ forgetButton, almostButton, zap }) {
+export default function ContainerButtons({
+  forgetButton,
+  almostButton,
+  zapButton,
+}) {
   return (
     <ContainerButtonsStyled>
       <button onClick={forgetButton} data-test="no-btn">
         Não lembrei
       </button>
       <button onClick={almostButton} data-test="partial-btn">
-        quase não lembrei
+        Quase não lembrei
       </button>
-      <button onClick={zap} data-test="zap-btn">
-        Zap
+      <button onClick={zapButton} data-test="zap-btn">
+        Zap!
       </button>
     </ContainerButtonsStyled>
   );

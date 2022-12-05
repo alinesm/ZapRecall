@@ -36,7 +36,7 @@ export default function PerguntaAberta({
     setCardCliked(null);
   }
 
-  function zap() {
+  function zapButton() {
     setRemember(true);
     setPerguntaCor("#2fbe34");
     setIcon(correct);
@@ -60,7 +60,7 @@ export default function PerguntaAberta({
         <ContainerButtons
           forgetButton={forgetButton}
           almostButton={almostButton}
-          zap={zap}
+          zapButton={zapButton}
           index={index}
           setPerguntaCor={setPerguntaCor}
           setIcon={setIcon}
